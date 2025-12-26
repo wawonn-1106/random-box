@@ -1,0 +1,50 @@
+body{
+    overflow: hidden;
+}
+.box1{
+    display: flex;
+    margin: 0;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.box1 img{
+    margin-bottom: 20px;
+    width: 380px;
+    height: 360px;
+}
+.box2{
+    #closebtn{
+        right: 0;
+        bottom: 0;
+        position: absolute;
+    }
+    #itemImg{
+        width: 300px ;
+        height: 300px;
+        margin: 0;
+        object-fit: contain;
+    }
+    #message{
+        font-size: 30px;
+
+    }
+}
+.modal{
+    border: 5px solid black;
+    background-color: white;
+    display: none;
+    position: absolute;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    max-width: 90%;
+    max-height: 90%;
+    transform: translate(-50%, -50%);
+    padding: 20px; 
+}

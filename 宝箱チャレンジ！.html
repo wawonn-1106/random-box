@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>宝箱チャレンジ！</title>
+        <link rel="stylesheet" href="宝箱チャレンジ！.css">
+    </head>
+    <body>
+        <div class="box1">
+            <img id="tresurebox" src="C:\Users\e2024135\Desktop\VSCODE\.vscode\宝箱.png">
+            <button id="btn">宝箱を開ける</button> 
+            
+        </div>
+        <div class="box2">
+              <div id="overlay" class="modal">
+              <img id="itemImg" src="" alt="アイテム">
+              <p id="message"></p>
+              <button id="closebtn">閉じる</button>
+        </div>
+        
+        <script>
+        const btn=document.getElementById("btn");
+        const message=document.getElementById("message");
+        const itemImg=document.getElementById("itemImg");
+        const overlay=document.getElementById("overlay");
+        const tresurebox=document.getElementById("tresurebox");
+        const closebtn=document.getElementById("closebtn");
+        const items=[
+            {text:"勇者の剣があった！",img:"勇者の剣.jpg"},
+            {text:"ダイアモンドがあった！",img:"ダイアモンド.jpg"},
+            {text:"何もなかった。",img:"宝箱(空).png"},
+            {text:"大量の骨！？があった。",img:"大量の骨.png"},
+            {text:"何かの卵があった。",img:"何かの卵.png"},
+            {text:"宝の地図があった。",img:"宝の地図.png"},
+        ]
+
+        btn.addEventListener("click", function(){
+            const itemIndex=Math.floor(Math.random()*items.length);
+            const result=items[itemIndex];
+            message.innerHTML=`宝箱を開けた。そこには<br>${result.text}`;
+            itemImg.src=result.img;
+            overlay.style.display="block";
+            });
+        closebtn.addEventListener("click", function(){
+            overlay.style.display="none";
+        })
+        </script>
+    </body>
+</html>
